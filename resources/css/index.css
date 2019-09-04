@@ -1,0 +1,173 @@
+.bg-Water {
+  background-color: dodgerblue;
+}
+.bg-Fire {
+  background-color: #ff4422;
+}
+.bg-Grass {
+  background-color: #77cc55;
+}
+.bg-Poison {
+  background-color: #aa5599;
+}
+.bg-Flying {
+  background-color: #8899ff;
+}
+.bg-Rock {
+  background-color: peru;
+}
+.bg-Steel {
+  background-color: grey;
+}
+.bg-Electric {
+  background-color: gold;
+}
+.bg-Ghost {
+  color: aliceblue;
+  background-color: darkslategray;
+}
+.bg-Fairy {
+  background-color: #ee99ee;
+}
+.bg-Bug {
+  background-color: olive;
+}
+.bg-Ground {
+  background-color: #ddbb55;
+}
+.bg-Normal {
+  background-color: #aaaa99;
+}
+.bg-Dragon {
+  background-color: #5f52bf;
+}
+.bg-Dark {
+  color: wheat;
+  background-color: #775544;
+}
+.bg-Ice {
+  background-color: #66ccff;
+}
+.bg-Psychic {
+  background-color: #ff5599;
+}
+.bg-Fighting {
+  background-color: #bb5544;
+}
+.bold {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px !important;
+}
+.stats {
+  background-color: #77cc55;
+  height: 7px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+td,
+th {
+  text-align: center;
+}
+
+.pokemon {
+  transition: 5s;
+  opacity: 0;
+}
+
+.poke {
+  width: 100vw;
+  height: 50vh;
+  position: fixed;
+  transition: 1s;
+}
+
+.poke.upper {
+  background-color: red;
+  top: 0;
+  left: 0;
+  transform-origin: top;
+  transform: translateY(0);
+  z-index: 99;
+  border-bottom: 15px solid;
+}
+
+.poke.lower {
+  background-color: wheat;
+  top: 50%;
+  left: 0;
+  transform-origin: bottom;
+  transform: translateY(0);
+  z-index: 90;
+}
+
+.upper .pokeball {
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translate(-50%, -40%);
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  border: 15px solid;
+  background-color: white;
+  z-index: 999;
+  animation: glow;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  transition: all;
+  padding: 10px;
+  box-shadow: 0 0 20px 0 rgba(255, 255, 255, 1) inset;
+}
+
+@keyframes glow {
+  0% {
+    background-color: #e6ffff;
+    box-shadow: 0 0 20px 0 rgba(255, 0, 0, 0.4) inset;
+  }
+  50% {
+    background-color: white;
+    box-shadow: 0 0 50px 2px rgba(255, 0, 0, 1) inset;
+  }
+  100% {
+    background-color: #e6ffff;
+    box-shadow: 0 0 20px 0 rgba(255, 0, 0, 0.4) inset;
+  }
+}
+
+.pop-the-search {
+  position: fixed;
+  right: 0px;
+  bottom: 10px;
+  transition: 0.5s linear;
+  padding: 5px;
+  transform: translateX(78%);
+  z-index: 50;
+  cursor: pointer;
+}
+
+.search {
+  border: 1px solid;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+  background-color: white;
+}
+
+.animate {
+  animation: spin;
+  animation-play-state: paused;
+  transition: 1s;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

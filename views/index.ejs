@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="./css/bootstrap.min.css" rel="stylesheet" />
+    <link href="./css/index.css" rel="stylesheet" />
+    <script defer src="./js/index.js"></script>
+    <title>Pokedex</title>
+  </head>
+  <body>
+    <!-- loader -->
+    <section class="poke upper">
+      <div class="pokeball"><div>
+    </section>
+    <section class="poke lower"></section>
+
+    <!-- search -->
+    <div class="pop-the-search">
+      <form action="/?search=search" method="GET" class="form-inline">
+        <div class="search">
+          <img src="./images/assets/icon.png" style="width: 50px; height: auto;" class="image animate">
+          <span> 
+            <input type="text" 
+            name="search" 
+            class="bg-transparent border-0" 
+            style="outline:none" 
+            placeholder="search pokemon..." 
+            autocomplete="off" 
+            value="<%= typeof search != 'undefined' ? search : '' %>"/>
+            <span>
+              <button class="btn btn-info" type="submit" hidden>search</button>
+            </span>
+          </span>
+        </div>
+      </form>
+    </div>
+
+    <div class="container pokemon" style="display:none;">
+      <table class="table table-striped">
+        <thead style="position: sticky; top:0">
+          <tr>
+            <th>
+              #
+            </th>
+            <th>
+              Pic
+            </th>
+            <th>
+              Pokemon
+            </th>
+            <th>
+              Type
+            </th>
+            <th>
+              Stats
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <% pokemon.forEach((element,i) =>{ %>
+          <tr>
+            <td>
+              <%= element.id %>
+            </td>
+            <td>
+              <img src="<%= element.sprite %>" width="150" height="150" />
+            </td>
+            <td>
+              <%= element.name.english %>
+            </td>
+            <td>
+              <% element.type.map(type => { %>
+              <div
+                class="bg-<%= type %> p-1 rounded mx-1 float-left text-center bold"
+                style="width: 70px"
+              >
+                <%= type %>
+              </div>
+              <div class="clear-fix"></div>
+              <% }) %>
+            </td>
+            <td style="width: 20%">
+              <div>
+                <span>HP:</span>
+                <div style="width: 100%;background:#e0dbdb;margin: 1px 0">
+                  <div
+                    class="stats"
+                    style="width:<%= element.base.HP %>px"
+                  ></div>
+                </div>
+              </div>
+
+              <div>
+                <span>Attack:</span>
+                <div style="width: 100%;background:#e0dbdb;margin: 1px 0">
+                  <div
+                    class="stats"
+                    style="width:<%= element.base.Attack %>px"
+                  ></div>
+                </div>
+              </div>
+
+              <div>
+                <span>Defense:</span>
+                <div style="width: 100%;background:#e0dbdb;margin: 1px 0">
+                  <div
+                    class="stats"
+                    style="width:<%= element.base.Defense %>px"
+                  ></div>
+                </div>
+              </div>
+
+              <div>
+                <span>Sp.Attack:</span>
+                <div style="width: 100%;background:#e0dbdb;margin: 1px 0">
+                  <div
+                    class="stats"
+                    style="width:<%= element.base.spAtk %>px"
+                  ></div>
+                </div>
+              </div>
+
+              <div>
+                <span>Sp.Defense:</span>
+                <div style="width: 100%;background:#e0dbdb;margin: 1px 0">
+                  <div
+                    class="stats"
+                    style="width:<%= element.base.spDef %>px"
+                  ></div>
+                </div>
+              </div>
+
+              <div>
+                <span>Speed:</span>
+                <div style="width: 100%;background:#e0dbdb;margin: 1px 0">
+                  <div
+                    class="stats"
+                    style="width:<%= element.base.Speed %>px"
+                  ></div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
