@@ -83,6 +83,8 @@ const fs = require("fs");
 
 // console.log(newpkmn[0]);
 
+const PORT = process.env.PORT || 3000;
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -111,7 +113,7 @@ app.get("/", (req, res) => {
   });
 });
 
-app.listen(3000, err => {
+app.listen(PORT, err => {
   if (err) console.log("error connecting to server");
   console.log("server is running in port 3000...");
 });
