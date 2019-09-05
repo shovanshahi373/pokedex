@@ -4,6 +4,7 @@ let pkmn = require("./resources/json/completePokeInfo.json");
 const bodyParser = require("body-parser");
 const path = require("path");
 const fs = require("fs");
+const AdvancedSearch = require("./config/advancedSearch");
 
 // fs.exists("./resources/json/pokeimage.json", exists => {
 //   if (!exists) {
@@ -94,10 +95,16 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, "resources")));
 
 app.get("/", (req, res) => {
-  const { search } = req.query;
+  const { search, region, type } = req.query;
+  let filter = pkmn;
+  if (region || type) {
+    filter = AdvancedSearch(region, type);
+  }
+  // filter = AdvancedSearch(region, type);
   const pat = new RegExp(search, "gi");
+
   if (search) {
-    const filteredpkmn = pkmn.filter(pokemon => {
+    const filteredpkmn = filter.filter(pokemon => {
       return (
         pokemon.name.english.match(pat) || JSON.stringify(pokemon.id).match(pat)
       );
@@ -106,9 +113,10 @@ app.get("/", (req, res) => {
       pokemon: filteredpkmn,
       search
     });
+    return;
   }
   res.render("index", {
-    pokemon: pkmn,
+    pokemon: filter,
     search
   });
 });

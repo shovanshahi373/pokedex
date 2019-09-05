@@ -5,11 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link href="./css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="./images/assets/pokeicon.png" type="image/x-icon">
     <link href="./css/index.css" rel="stylesheet" />
     <script defer src="./js/index.js"></script>
     <title>Pokedex</title>
   </head>
   <body>
+    <!-- logo -->
+    <img src="./images/assets/logo2.png" alt="" class="logo">
+
     <!-- loader -->
     <section class="poke upper">
       <div class="pokeball"><div>
@@ -17,8 +21,9 @@
     <section class="poke lower"></section>
 
     <!-- search -->
-    <div class="pop-the-search">
-      <form action="/?search=search" method="GET" class="form-inline">
+    <form action="/?type=type&region=region&search=search" method="GET" class="form-inline">
+
+      <div class="pop-the-search">
         <div class="search">
           <img src="./images/assets/icon.png" style="width: 50px; height: auto;" class="image animate">
           <span> 
@@ -34,8 +39,50 @@
             </span>
           </span>
         </div>
-      </form>
-    </div>
+      </div>
+
+      <div class="restrict">
+        <div class="search">
+          <img src="./images/assets/pokebadge.png" style="width: 50px; height: auto;" class="">
+          <span> 
+            <select name="type">
+              <option value="---Type---" disabled selected>---Type---</option>
+              <option value="Grass">Grass</option>
+              <option value="Fire">Fire</option>
+              <option value="Water">Water</option>
+              <option value="Electric">Electric</option>
+              <option value="Normal">Normal</option>
+              <option value="Psychic">Psychic</option>
+              <option value="Poison">Poison</option>
+              <option value="Ghost">Ghost</option>
+              <option value="Fighting">Fighting</option>
+              <option value="Flying">Flying</option>
+              <option value="Bug">Bug</option>
+              <option value="Ice">Ice</option>
+              <option value="Rock">Rock</option>
+              <option value="Ground">Ground</option>
+              <option value="Steel">Steel</option>
+              <option value="Dark">Dark</option>
+              <option value="Dragon">Dragon</option>
+              <option value="Fairy">Fairy</option>
+            </select>
+            <span>
+              <select name="region">
+                <option value="---Region---" disabled selected>---Region---</option>
+                <option value="Kanto">Kanto</option>
+                <option value="Johto">Johto</option>
+                <option value="Hoenn">Hoenn</option>
+                <option value="Sinnoh">Sinnoh</option>
+                <option value="Unova">Unova</option>
+                <option value="Kalos">Kalos</option>
+                <option value="Alola">Alola</option>
+              </select>
+            </span>
+          </span>
+        </div>
+      </div>
+    </form>
+
 
     <div class="container pokemon" style="display:none;">
       <table class="table table-striped">
@@ -73,7 +120,7 @@
             <td>
               <% element.type.map(type => { %>
               <div
-                class="bg-<%= type %> p-1 rounded mx-1 float-left text-center bold"
+                class="bg-<%= type %> p-1 rounded mx-1 float-left text-center bold mb-1"
                 style="width: 70px"
               >
                 <%= type %>
