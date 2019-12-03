@@ -1,0 +1,1460 @@
+[
+  {
+    "id": 810,
+    "name": {
+      "english": "Grookey",
+      "japanese": "サルノリ",
+      "chinese": ""
+    },
+    "type": ["Grass"],
+    "base": {
+      "HP": 50,
+      "Attack": 65,
+      "Defense": 50,
+      "spAtk": 40,
+      "spDef": 40,
+      "Speed": 65
+    },
+    "sprite": "./images/png/810Grookey.png"
+  },
+  {
+    "id": 811,
+    "name": {
+      "english": "Thwackey",
+      "japanese": "バチンキー",
+      "chinese": ""
+    },
+    "type": ["Grass"],
+    "base": {
+      "HP": 70,
+      "Attack": 85,
+      "Defense": 70,
+      "spAtk": 55,
+      "spDef": 60,
+      "Speed": 80
+    },
+    "sprite": "./images/png/811Thwackey.png"
+  },
+  {
+    "id": 812,
+    "name": {
+      "english": "Rillaboom",
+      "japanese": "ゴリランダー",
+      "chinese": ""
+    },
+    "type": ["Grass"],
+    "base": {
+      "HP": 100,
+      "Attack": 125,
+      "Defense": 90,
+      "spAtk": 60,
+      "spDef": 70,
+      "Speed": 85
+    },
+    "sprite": "./images/png/812Rillaboom.png"
+  },
+  {
+    "id": 813,
+    "name": {
+      "english": "Scorbunny",
+      "japanese": "ヒバニー",
+      "chinese": ""
+    },
+    "type": ["Fire"],
+    "base": {
+      "HP": 50,
+      "Attack": 71,
+      "Defense": 40,
+      "spAtk": 40,
+      "spDef": 40,
+      "Speed": 69
+    },
+    "sprite": "./images/png/813Scorbunny.png"
+  },
+  {
+    "id": 814,
+    "name": {
+      "english": "Raboot",
+      "japanese": "ラビフット",
+      "chinese": ""
+    },
+    "type": ["Fire"],
+    "base": {
+      "HP": 65,
+      "Attack": 86,
+      "Defense": 60,
+      "spAtk": 55,
+      "spDef": 60,
+      "Speed": 94
+    },
+    "sprite": "./images/png/814Raboot.png"
+  },
+  {
+    "id": 815,
+    "name": {
+      "english": "Cinderace",
+      "japanese": "エースバーン",
+      "chinese": ""
+    },
+    "type": ["Fire"],
+    "base": {
+      "HP": 80,
+      "Attack": 116,
+      "Defense": 75,
+      "spAtk": 65,
+      "spDef": 75,
+      "Speed": 119
+    },
+    "sprite": "./images/png/815Cinderace.png"
+  },
+  {
+    "id": 816,
+    "name": {
+      "english": "Sobble",
+      "japanese": "メッソン",
+      "chinese": ""
+    },
+    "type": ["Water"],
+    "base": {
+      "HP": 50,
+      "Attack": 40,
+      "Defense": 40,
+      "spAtk": 70,
+      "spDef": 40,
+      "Speed": 70
+    },
+    "sprite": "./images/png/816Sobble.png"
+  },
+  {
+    "id": 817,
+    "name": {
+      "english": "Drizzile",
+      "japanese": "ジメレオン",
+      "chinese": ""
+    },
+    "type": ["Water"],
+    "base": {
+      "HP": 65,
+      "Attack": 60,
+      "Defense": 55,
+      "spAtk": 95,
+      "spDef": 55,
+      "Speed": 90
+    },
+    "sprite": "./images/png/817Drizzile.png"
+  },
+  {
+    "id": 818,
+    "name": {
+      "english": "Inteleon",
+      "japanese": "インテレオン",
+      "chinese": ""
+    },
+    "type": ["Water"],
+    "base": {
+      "HP": 70,
+      "Attack": 85,
+      "Defense": 65,
+      "spAtk": 125,
+      "spDef": 65,
+      "Speed": 120
+    },
+    "sprite": "./images/png/818Inteleon.png"
+  },
+  {
+    "id": 819,
+    "name": {
+      "english": "Skwovet",
+      "japanese": "ホシガリス",
+      "chinese": ""
+    },
+    "type": ["Normal"],
+    "base": {
+      "HP": 70,
+      "Attack": 55,
+      "Defense": 55,
+      "spAtk": 35,
+      "spDef": 35,
+      "Speed": 25
+    },
+    "sprite": "./images/png/819Skwovet.png"
+  },
+  {
+    "id": 820,
+    "name": {
+      "english": "Greedunt",
+      "japanese": "ヨクバリス",
+      "chinese": ""
+    },
+    "type": ["Normal"],
+    "base": {
+      "HP": 120,
+      "Attack": 95,
+      "Defense": 95,
+      "spAtk": 55,
+      "spDef": 75,
+      "Speed": 20
+    },
+    "sprite": "./images/png/820Greedunt.png"
+  },
+  {
+    "id": 821,
+    "name": {
+      "english": "Rookidee",
+      "japanese": "ココガラ",
+      "chinese": ""
+    },
+    "type": ["Flying"],
+    "base": {
+      "HP": 38,
+      "Attack": 47,
+      "Defense": 35,
+      "spAtk": 33,
+      "spDef": 35,
+      "Speed": 57
+    },
+    "sprite": "./images/png/821Rookidee.png"
+  },
+  {
+    "id": 822,
+    "name": {
+      "english": "Corvisquire",
+      "japanese": "アオガラス",
+      "chinese": ""
+    },
+    "type": ["Flying"],
+    "base": {
+      "HP": 68,
+      "Attack": 67,
+      "Defense": 55,
+      "spAtk": 43,
+      "spDef": 55,
+      "Speed": 77
+    },
+    "sprite": "./images/png/822Corvisquire.png"
+  },
+  {
+    "id": 823,
+    "name": {
+      "english": "Corviknight",
+      "japanese": "アーマーガア",
+      "chinese": ""
+    },
+    "type": ["Flying"],
+    "base": {
+      "HP": 98,
+      "Attack": 87,
+      "Defense": 105,
+      "spAtk": 53,
+      "spDef": 85,
+      "Speed": 67
+    },
+    "sprite": "./images/png/823Corviknight.png"
+  },
+  {
+    "id": 824,
+    "name": {
+      "english": "Blipbug",
+      "japanese": "サッチムシ",
+      "chinese": ""
+    },
+    "type": ["Bug"],
+    "base": {
+      "HP": 25,
+      "Attack": 20,
+      "Defense": 20,
+      "spAtk": 25,
+      "spDef": 45,
+      "Speed": 45
+    },
+    "sprite": "./images/png/824Blipbug.png"
+  },
+  {
+    "id": 825,
+    "name": {
+      "english": "Dottler",
+      "japanese": "レドームシ",
+      "chinese": ""
+    },
+    "type": ["Bug", "Psychic"],
+    "base": {
+      "HP": 50,
+      "Attack": 35,
+      "Defense": 80,
+      "spAtk": 50,
+      "spDef": 90,
+      "Speed": 30
+    },
+    "sprite": "./images/png/825Dottler.png"
+  },
+  {
+    "id": 826,
+    "name": {
+      "english": "Orbeetle",
+      "japanese": "イオルブ",
+      "chinese": ""
+    },
+    "type": ["Bug", "Psychic"],
+    "base": {
+      "HP": 60,
+      "Attack": 45,
+      "Defense": 110,
+      "spAtk": 80,
+      "spDef": 120,
+      "Speed": 90
+    },
+    "sprite": "./images/png/826Orbeetle.png"
+  },
+  {
+    "id": 827,
+    "name": {
+      "english": "Nickit",
+      "japanese": "クスネ",
+      "chinese": ""
+    },
+    "type": ["Dark"],
+    "base": {
+      "HP": 40,
+      "Attack": 28,
+      "Defense": 28,
+      "spAtk": 47,
+      "spDef": 52,
+      "Speed": 50
+    },
+    "sprite": "./images/png/827Nickit.png"
+  },
+  {
+    "id": 828,
+    "name": {
+      "english": "Thievul",
+      "japanese": "フォクスライ",
+      "chinese": ""
+    },
+    "type": ["Dark"],
+    "base": {
+      "HP": 70,
+      "Attack": 58,
+      "Defense": 58,
+      "spAtk": 87,
+      "spDef": 92,
+      "Speed": 90
+    },
+    "sprite": "./images/png/828Thievul.png"
+  },
+  {
+    "id": 829,
+    "name": {
+      "english": "Gossifleur",
+      "japanese": "ヒメンカ",
+      "chinese": ""
+    },
+    "type": ["Grass"],
+    "base": {
+      "HP": 40,
+      "Attack": 40,
+      "Defense": 60,
+      "spAtk": 40,
+      "spDef": 60,
+      "Speed": 10
+    },
+    "sprite": "./images/png/829Gossifleur.png"
+  },
+  {
+    "id": 830,
+    "name": {
+      "english": "Eldegoss",
+      "japanese": "ワタシラガ",
+      "chinese": ""
+    },
+    "type": ["Grass"],
+    "base": {
+      "HP": 60,
+      "Attack": 50,
+      "Defense": 90,
+      "spAtk": 80,
+      "spDef": 120,
+      "Speed": 60
+    },
+    "sprite": "./images/png/830Eldegoss.png"
+  },
+  {
+    "id": 831,
+    "name": {
+      "english": "Wooloo",
+      "japanese": "ウールー",
+      "chinese": ""
+    },
+    "type": ["Normal"],
+    "base": {
+      "HP": 42,
+      "Attack": 40,
+      "Defense": 55,
+      "spAtk": 40,
+      "spDef": 45,
+      "Speed": 48
+    },
+    "sprite": "./images/png/831Wooloo.png"
+  },
+  {
+    "id": 832,
+    "name": {
+      "english": "Dubwool",
+      "japanese": "バイウールー",
+      "chinese": ""
+    },
+    "type": ["Normal"],
+    "base": {
+      "HP": 72,
+      "Attack": 80,
+      "Defense": 100,
+      "spAtk": 60,
+      "spDef": 90,
+      "Speed": 88
+    },
+    "sprite": "./images/png/832Dubwool.png"
+  },
+  {
+    "id": 833,
+    "name": {
+      "english": "Chewtle",
+      "japanese": "カムカメ",
+      "chinese": ""
+    },
+    "type": ["Water"],
+    "base": {
+      "HP": 50,
+      "Attack": 64,
+      "Defense": 50,
+      "spAtk": 38,
+      "spDef": 38,
+      "Speed": 44
+    },
+    "sprite": "./images/png/833Chewtle.png"
+  },
+  {
+    "id": 834,
+    "name": {
+      "english": "Drednaw",
+      "japanese": "カジリガメ",
+      "chinese": ""
+    },
+    "type": ["Water"],
+    "base": {
+      "HP": 90,
+      "Attack": 115,
+      "Defense": 90,
+      "spAtk": 48,
+      "spDef": 68,
+      "Speed": 74
+    },
+    "sprite": "./images/png/834Drednaw.png"
+  },
+  {
+    "id": 835,
+    "name": {
+      "english": "Yamper",
+      "japanese": "ワンパチ",
+      "chinese": ""
+    },
+    "type": ["Electric"],
+    "base": {
+      "HP": 59,
+      "Attack": 45,
+      "Defense": 50,
+      "spAtk": 40,
+      "spDef": 50,
+      "Speed": 26
+    },
+    "sprite": "./images/png/835Yamper.png"
+  },
+  {
+    "id": 836,
+    "name": {
+      "english": "Boltund",
+      "japanese": "パルスワン",
+      "chinese": ""
+    },
+    "type": ["Electric"],
+    "base": {
+      "HP": 69,
+      "Attack": 90,
+      "Defense": 60,
+      "spAtk": 90,
+      "spDef": 60,
+      "Speed": 121
+    },
+    "sprite": "./images/png/836Boltund.png"
+  },
+  {
+    "id": 837,
+    "name": {
+      "english": "Rolycoly",
+      "japanese": "タンドン",
+      "chinese": ""
+    },
+    "type": ["Rock"],
+    "base": {
+      "HP": 30,
+      "Attack": 40,
+      "Defense": 50,
+      "spAtk": 40,
+      "spDef": 50,
+      "Speed": 30
+    },
+    "sprite": "./images/png/837Rolycoly.png"
+  },
+  {
+    "id": 838,
+    "name": {
+      "english": "Carkol",
+      "japanese": "トロッゴン",
+      "chinese": ""
+    },
+    "type": ["Rock", "Fire"],
+    "base": {
+      "HP": 80,
+      "Attack": 60,
+      "Defense": 90,
+      "spAtk": 60,
+      "spDef": 70,
+      "Speed": 50
+    },
+    "sprite": "./images/png/838Carkol.png"
+  },
+  {
+    "id": 839,
+    "name": {
+      "english": "Coalossal",
+      "japanese": "セキタンザン",
+      "chinese": ""
+    },
+    "type": ["Rock", "Fire"],
+    "base": {
+      "HP": 110,
+      "Attack": 80,
+      "Defense": 120,
+      "spAtk": 80,
+      "spDef": 90,
+      "Speed": 30
+    },
+    "sprite": "./images/png/839Coalossal.png"
+  },
+  {
+    "id": 840,
+    "name": {
+      "english": "Applin",
+      "japanese": "カジッチュ",
+      "chinese": ""
+    },
+    "type": ["Grass", "Dragon"],
+    "base": {
+      "HP": 40,
+      "Attack": 40,
+      "Defense": 80,
+      "spAtk": 40,
+      "spDef": 40,
+      "Speed": 20
+    },
+    "sprite": "./images/png/840Applin.png"
+  },
+  {
+    "id": 841,
+    "name": {
+      "english": "Flapple",
+      "japanese": "アップリュー",
+      "chinese": ""
+    },
+    "type": ["Grass", "Dragon"],
+    "base": {
+      "HP": 70,
+      "Attack": 110,
+      "Defense": 80,
+      "spAtk": 95,
+      "spDef": 60,
+      "Speed": 70
+    },
+    "sprite": "./images/png/841Flapple.png"
+  },
+  {
+    "id": 842,
+    "name": {
+      "english": "Appletun",
+      "japanese": "タルップル",
+      "chinese": ""
+    },
+    "type": ["Grass", "Dragon"],
+    "base": {
+      "HP": 110,
+      "Attack": 85,
+      "Defense": 80,
+      "spAtk": 100,
+      "spDef": 80,
+      "Speed": 30
+    },
+    "sprite": "./images/png/842Appletun.png"
+  },
+  {
+    "id": 843,
+    "name": {
+      "english": "Silicobra",
+      "japanese": "スナヘビ",
+      "chinese": ""
+    },
+    "type": ["Ground"],
+    "base": {
+      "HP": 52,
+      "Attack": 57,
+      "Defense": 75,
+      "spAtk": 35,
+      "spDef": 50,
+      "Speed": 46
+    },
+    "sprite": "./images/png/843Silicobra.png"
+  },
+  {
+    "id": 844,
+    "name": {
+      "english": "Sandaconda",
+      "japanese": "サダイジャ",
+      "chinese": ""
+    },
+    "type": ["Ground"],
+    "base": {
+      "HP": 72,
+      "Attack": 107,
+      "Defense": 125,
+      "spAtk": 65,
+      "spDef": 70,
+      "Speed": 71
+    },
+    "sprite": "./images/png/844Sandaconda.png"
+  },
+  {
+    "id": 845,
+    "name": {
+      "english": "Cramorant",
+      "japanese": "ウッウ",
+      "chinese": ""
+    },
+    "type": ["Flying", "Water"],
+    "base": {
+      "HP": 70,
+      "Attack": 85,
+      "Defense": 55,
+      "spAtk": 85,
+      "spDef": 95,
+      "Speed": 85
+    },
+    "sprite": "./images/png/845Cramorant.png"
+  },
+  {
+    "id": 846,
+    "name": {
+      "english": "Arrokuda",
+      "japanese": "サシカマス",
+      "chinese": ""
+    },
+    "type": ["Water"],
+    "base": {
+      "HP": 41,
+      "Attack": 63,
+      "Defense": 40,
+      "spAtk": 40,
+      "spDef": 30,
+      "Speed": 66
+    },
+    "sprite": "./images/png/846Arrokuda.png"
+  },
+  {
+    "id": 847,
+    "name": {
+      "english": "Baraskewda",
+      "japanese": "カマスジョー",
+      "chinese": ""
+    },
+    "type": ["Water"],
+    "base": {
+      "HP": 61,
+      "Attack": 123,
+      "Defense": 60,
+      "spAtk": 60,
+      "spDef": 50,
+      "Speed": 136
+    },
+    "sprite": "./images/png/847Baraskewda.png"
+  },
+  {
+    "id": 848,
+    "name": {
+      "english": "Toxel",
+      "japanese": "エレズン",
+      "chinese": ""
+    },
+    "type": ["Electric", "Poison"],
+    "base": {
+      "HP": 40,
+      "Attack": 38,
+      "Defense": 35,
+      "spAtk": 54,
+      "spDef": 35,
+      "Speed": 40
+    },
+    "sprite": "./images/png/848Toxel.png"
+  },
+  {
+    "id": 849,
+    "name": {
+      "english": "Toxtricity",
+      "japanese": "ストリンダー",
+      "chinese": ""
+    },
+    "type": ["Electric", "Poison"],
+    "base": {
+      "HP": 75,
+      "Attack": 98,
+      "Defense": 70,
+      "spAtk": 114,
+      "spDef": 70,
+      "Speed": 75
+    },
+    "sprite": "./images/png/849Toxtricity.png"
+  },
+  {
+    "id": 850,
+    "name": {
+      "english": "Sizzlipede",
+      "japanese": "ヤクデ",
+      "chinese": ""
+    },
+    "type": ["Fire", "Bug"],
+    "base": {
+      "HP": 50,
+      "Attack": 65,
+      "Defense": 45,
+      "spAtk": 50,
+      "spDef": 50,
+      "Speed": 45
+    },
+    "sprite": "./images/png/850Sizzlipede.png"
+  },
+  {
+    "id": 851,
+    "name": {
+      "english": "Centiskorch",
+      "japanese": "マルヤクデ",
+      "chinese": ""
+    },
+    "type": ["Fire", "Bug"],
+    "base": {
+      "HP": 100,
+      "Attack": 115,
+      "Defense": 65,
+      "spAtk": 90,
+      "spDef": 90,
+      "Speed": 65
+    },
+    "sprite": "./images/png/851Centiskorch.png"
+  },
+  {
+    "id": 852,
+    "name": {
+      "english": "Clobbopus",
+      "japanese": "タタッコ",
+      "chinese": ""
+    },
+    "type": ["Fighting"],
+    "base": {
+      "HP": 50,
+      "Attack": 68,
+      "Defense": 60,
+      "spAtk": 50,
+      "spDef": 50,
+      "Speed": 32
+    },
+    "sprite": "./images/png/852Clobbopus.png"
+  },
+  {
+    "id": 853,
+    "name": {
+      "english": "Grapploct",
+      "japanese": "オトスパス",
+      "chinese": ""
+    },
+    "type": ["Fighting"],
+    "base": {
+      "HP": 80,
+      "Attack": 118,
+      "Defense": 90,
+      "spAtk": 70,
+      "spDef": 80,
+      "Speed": 42
+    },
+    "sprite": "./images/png/853Grapploct.png"
+  },
+  {
+    "id": 854,
+    "name": {
+      "english": "Sinistea",
+      "japanese": "ヤバチャ",
+      "chinese": ""
+    },
+    "type": ["Ghost"],
+    "base": {
+      "HP": 40,
+      "Attack": 45,
+      "Defense": 45,
+      "spAtk": 74,
+      "spDef": 54,
+      "Speed": 50
+    },
+    "sprite": "./images/png/854Sinistea.png"
+  },
+  {
+    "id": 855,
+    "name": {
+      "english": "Polteageist",
+      "japanese": "ポットデス",
+      "chinese": ""
+    },
+    "type": ["Ghost"],
+    "base": {
+      "HP": 60,
+      "Attack": 65,
+      "Defense": 65,
+      "spAtk": 134,
+      "spDef": 114,
+      "Speed": 70
+    },
+    "sprite": "./images/png/855Polteageist.png"
+  },
+  {
+    "id": 856,
+    "name": {
+      "english": "Hatenna",
+      "japanese": "ミブリム",
+      "chinese": ""
+    },
+    "type": ["Psychic"],
+    "base": {
+      "HP": 42,
+      "Attack": 30,
+      "Defense": 45,
+      "spAtk": 56,
+      "spDef": 53,
+      "Speed": 39
+    },
+    "sprite": "./images/png/856Hatenna.png"
+  },
+  {
+    "id": 857,
+    "name": {
+      "english": "Hattrem",
+      "japanese": "テブリム",
+      "chinese": ""
+    },
+    "type": ["Psychic"],
+    "base": {
+      "HP": 57,
+      "Attack": 40,
+      "Defense": 65,
+      "spAtk": 86,
+      "spDef": 73,
+      "Speed": 49
+    },
+    "sprite": "./images/png/857Hattrem.png"
+  },
+  {
+    "id": 858,
+    "name": {
+      "english": "Hatterene",
+      "japanese": "ブリムオン",
+      "chinese": ""
+    },
+    "type": ["Psychic", "Fairy"],
+    "base": {
+      "HP": 57,
+      "Attack": 90,
+      "Defense": 95,
+      "spAtk": 136,
+      "spDef": 103,
+      "Speed": 29
+    },
+    "sprite": "./images/png/858Hatterene.png"
+  },
+  {
+    "id": 859,
+    "name": {
+      "english": "Impidimp",
+      "japanese": "ベロバー",
+      "chinese": ""
+    },
+    "type": ["Dark", "Fairy"],
+    "base": {
+      "HP": 45,
+      "Attack": 45,
+      "Defense": 30,
+      "spAtk": 55,
+      "spDef": 40,
+      "Speed": 50
+    },
+    "sprite": "./images/png/859Impidimp.png"
+  },
+  {
+    "id": 860,
+    "name": {
+      "english": "Morgrem",
+      "japanese": "ギモー",
+      "chinese": ""
+    },
+    "type": ["Dark", "Fairy"],
+    "base": {
+      "HP": 65,
+      "Attack": 60,
+      "Defense": 45,
+      "spAtk": 75,
+      "spDef": 55,
+      "Speed": 70
+    },
+    "sprite": "./images/png/860Morgrem.png"
+  },
+  {
+    "id": 861,
+    "name": {
+      "english": "Grimmsnarl",
+      "japanese": "オーロンゲ",
+      "chinese": ""
+    },
+    "type": ["Dark", "Fairy"],
+    "base": {
+      "HP": 95,
+      "Attack": 120,
+      "Defense": 65,
+      "spAtk": 95,
+      "spDef": 75,
+      "Speed": 60
+    },
+    "sprite": "./images/png/861Grimmsnarl.png"
+  },
+  {
+    "id": 862,
+    "name": {
+      "english": "Obstagoon",
+      "japanese": "タチフサグマ",
+      "chinese": ""
+    },
+    "type": ["Dark", "Normal"],
+    "base": {
+      "HP": 93,
+      "Attack": 90,
+      "Defense": 101,
+      "spAtk": 60,
+      "spDef": 81,
+      "Speed": 95
+    },
+    "sprite": "./images/png/862Obstagoon.png"
+  },
+  {
+    "id": 863,
+    "name": {
+      "english": "Perrserker",
+      "japanese": "ニャイキング",
+      "chinese": ""
+    },
+    "type": ["Steel"],
+    "base": {
+      "HP": 70,
+      "Attack": 110,
+      "Defense": 100,
+      "spAtk": 50,
+      "spDef": 60,
+      "Speed": 50
+    },
+    "sprite": "./images/png/863Perrserker.png"
+  },
+  {
+    "id": 864,
+    "name": {
+      "english": "Cursola",
+      "japanese": "サニゴーン",
+      "chinese": ""
+    },
+    "type": ["Ghost"],
+    "base": {
+      "HP": 60,
+      "Attack": 95,
+      "Defense": 50,
+      "spAtk": 125,
+      "spDef": 130,
+      "Speed": 30
+    },
+    "sprite": "./images/png/864Cursola.png"
+  },
+  {
+    "id": 865,
+    "name": {
+      "english": "Sirfetch'd",
+      "japanese": "ネギガナイト",
+      "chinese": ""
+    },
+    "type": ["Fighting"],
+    "base": {
+      "HP": 62,
+      "Attack": 135,
+      "Defense": 95,
+      "spAtk": 68,
+      "spDef": 82,
+      "Speed": 65
+    },
+    "sprite": "./images/png/865Sirfetch'd.png"
+  },
+  {
+    "id": 866,
+    "name": {
+      "english": "Mr.Rime",
+      "japanese": "バリコオル",
+      "chinese": ""
+    },
+    "type": ["Ice", "Psychic"],
+    "base": {
+      "HP": 80,
+      "Attack": 85,
+      "Defense": 75,
+      "spAtk": 110,
+      "spDef": 100,
+      "Speed": 70
+    },
+    "sprite": "./images/png/866Mr.Rime.png"
+  },
+  {
+    "id": 867,
+    "name": {
+      "english": "Runerigus",
+      "japanese": "デスバーン",
+      "chinese": ""
+    },
+    "type": ["Ground", "Ghost"],
+    "base": {
+      "HP": 58,
+      "Attack": 95,
+      "Defense": 145,
+      "spAtk": 50,
+      "spDef": 105,
+      "Speed": 30
+    },
+    "sprite": "./images/png/867Runerigus.png"
+  },
+  {
+    "id": 868,
+    "name": {
+      "english": "Milcery",
+      "japanese": "マホミル",
+      "chinese": ""
+    },
+    "type": ["Fairy"],
+    "base": {
+      "HP": 45,
+      "Attack": 40,
+      "Defense": 40,
+      "spAtk": 50,
+      "spDef": 61,
+      "Speed": 34
+    },
+    "sprite": "./images/png/868Milcery.png"
+  },
+  {
+    "id": 869,
+    "name": {
+      "english": "Alcremie",
+      "japanese": "マホイップ",
+      "chinese": ""
+    },
+    "type": ["Fairy"],
+    "base": {
+      "HP": 65,
+      "Attack": 50,
+      "Defense": 75,
+      "spAtk": 110,
+      "spDef": 121,
+      "Speed": 64
+    },
+    "sprite": "./images/png/869Alcremie.png"
+  },
+  {
+    "id": 870,
+    "name": {
+      "english": "Falinks",
+      "japanese": "タイレーツ",
+      "chinese": ""
+    },
+    "type": ["Fighting"],
+    "base": {
+      "HP": 65,
+      "Attack": 100,
+      "Defense": 100,
+      "spAtk": 70,
+      "spDef": 60,
+      "Speed": 75
+    },
+    "sprite": "./images/png/870Falinks.png"
+  },
+  {
+    "id": 871,
+    "name": {
+      "english": "Pincurchin",
+      "japanese": "バチンウニ",
+      "chinese": ""
+    },
+    "type": ["Electric"],
+    "base": {
+      "HP": 48,
+      "Attack": 101,
+      "Defense": 95,
+      "spAtk": 91,
+      "spDef": 85,
+      "Speed": 15
+    },
+    "sprite": "./images/png/871Pincurchin.png"
+  },
+  {
+    "id": 872,
+    "name": {
+      "english": "Snom",
+      "japanese": "ユキハミ",
+      "chinese": ""
+    },
+    "type": ["Ice", "Bug"],
+    "base": {
+      "HP": 30,
+      "Attack": 25,
+      "Defense": 35,
+      "spAtk": 45,
+      "spDef": 30,
+      "Speed": 20
+    },
+    "sprite": "./images/png/872Snom.png"
+  },
+  {
+    "id": 873,
+    "name": {
+      "english": "Frosmoth",
+      "japanese": "モスノウ",
+      "chinese": ""
+    },
+    "type": ["Ice", "Bug"],
+    "base": {
+      "HP": 70,
+      "Attack": 65,
+      "Defense": 60,
+      "spAtk": 125,
+      "spDef": 90,
+      "Speed": 65
+    },
+    "sprite": "./images/png/873Frosmoth.png"
+  },
+  {
+    "id": 874,
+    "name": {
+      "english": "Stonjourner",
+      "japanese": "イシヘンジン",
+      "chinese": ""
+    },
+    "type": ["Rock"],
+    "base": {
+      "HP": 100,
+      "Attack": 125,
+      "Defense": 135,
+      "spAtk": 20,
+      "spDef": 20,
+      "Speed": 70
+    },
+    "sprite": "./images/png/874Stonjourner.png"
+  },
+  {
+    "id": 875,
+    "name": {
+      "english": "Eiscue",
+      "japanese": "コオリッポ",
+      "chinese": ""
+    },
+    "type": ["Ice"],
+    "base": {
+      "HP": 75,
+      "Attack": 80,
+      "Defense": 110,
+      "spAtk": 65,
+      "spDef": 90,
+      "Speed": 50
+    },
+    "sprite": "./images/png/875Eiscue.png"
+  },
+  {
+    "id": 876,
+    "name": {
+      "english": "Indeedee",
+      "japanese": "イエッサン",
+      "chinese": ""
+    },
+    "type": ["Psychic", "Normal"],
+    "base": {
+      "HP": 60,
+      "Attack": 65,
+      "Defense": 55,
+      "spAtk": 105,
+      "spDef": 95,
+      "Speed": 95
+    },
+    "sprite": "./images/png/876Indeedee.png"
+  },
+  {
+    "id": 877,
+    "name": {
+      "english": "Morpeko",
+      "japanese": "モルペコ",
+      "chinese": ""
+    },
+    "type": ["Electric", "Dark"],
+    "base": {
+      "HP": 58,
+      "Attack": 95,
+      "Defense": 58,
+      "spAtk": 70,
+      "spDef": 58,
+      "Speed": 97
+    },
+    "sprite": "./images/png/877Morpeko.png"
+  },
+  {
+    "id": 878,
+    "name": {
+      "english": "Cufant",
+      "japanese": "ゾウドウ",
+      "chinese": ""
+    },
+    "type": ["Steel"],
+    "base": {
+      "HP": 72,
+      "Attack": 80,
+      "Defense": 49,
+      "spAtk": 40,
+      "spDef": 49,
+      "Speed": 40
+    },
+    "sprite": "./images/png/878Cufant.png"
+  },
+  {
+    "id": 879,
+    "name": {
+      "english": "Copperajah",
+      "japanese": "ダイオウドウ",
+      "chinese": ""
+    },
+    "type": ["Steel"],
+    "base": {
+      "HP": 122,
+      "Attack": 130,
+      "Defense": 69,
+      "spAtk": 80,
+      "spDef": 69,
+      "Speed": 30
+    },
+    "sprite": "./images/png/879Copperajah.png"
+  },
+  {
+    "id": 880,
+    "name": {
+      "english": "Dracozolt",
+      "japanese": "パッチラゴン",
+      "chinese": ""
+    },
+    "type": ["Electric", "Dragon"],
+    "base": {
+      "HP": 90,
+      "Attack": 100,
+      "Defense": 90,
+      "spAtk": 80,
+      "spDef": 70,
+      "Speed": 75
+    },
+    "sprite": "./images/png/880Dracozolt.png"
+  },
+  {
+    "id": 881,
+    "name": {
+      "english": "Arctozolt",
+      "japanese": "パッチルドン",
+      "chinese": ""
+    },
+    "type": ["Electric", "Ice"],
+    "base": {
+      "HP": 90,
+      "Attack": 100,
+      "Defense": 90,
+      "spAtk": 90,
+      "spDef": 80,
+      "Speed": 55
+    },
+    "sprite": "./images/png/881Arctozolt.png"
+  },
+  {
+    "id": 882,
+    "name": {
+      "english": "Dracovish",
+      "japanese": "ウオノラゴン",
+      "chinese": ""
+    },
+    "type": ["Water", "Dragon"],
+    "base": {
+      "HP": 90,
+      "Attack": 90,
+      "Defense": 100,
+      "spAtk": 70,
+      "spDef": 80,
+      "Speed": 75
+    },
+    "sprite": "./images/png/882Dracovish.png"
+  },
+  {
+    "id": 883,
+    "name": {
+      "english": "Arctovish",
+      "japanese": "ウオチルドン",
+      "chinese": ""
+    },
+    "type": ["Water", "Ice"],
+    "base": {
+      "HP": 90,
+      "Attack": 90,
+      "Defense": 100,
+      "spAtk": 80,
+      "spDef": 90,
+      "Speed": 55
+    },
+    "sprite": "./images/png/883Arctovish.png"
+  },
+  {
+    "id": 884,
+    "name": {
+      "english": "Duraludon",
+      "japanese": "ジュラルドン",
+      "chinese": ""
+    },
+    "type": ["Steel", "Dragon"],
+    "base": {
+      "HP": 70,
+      "Attack": 95,
+      "Defense": 115,
+      "spAtk": 120,
+      "spDef": 50,
+      "Speed": 85
+    },
+    "sprite": "./images/png/884Duraludon.png"
+  },
+  {
+    "id": 885,
+    "name": {
+      "english": "Dreepy",
+      "japanese": "ドラメシヤ",
+      "chinese": ""
+    },
+    "type": ["Dragon", "Ghost"],
+    "base": {
+      "HP": 28,
+      "Attack": 60,
+      "Defense": 30,
+      "spAtk": 40,
+      "spDef": 30,
+      "Speed": 82
+    },
+    "sprite": "./images/png/885Dreepy.png"
+  },
+  {
+    "id": 886,
+    "name": {
+      "english": "Drakloak",
+      "japanese": "ドロンチ",
+      "chinese": ""
+    },
+    "type": ["Dragon", "Ghost"],
+    "base": {
+      "HP": 68,
+      "Attack": 80,
+      "Defense": 50,
+      "spAtk": 60,
+      "spDef": 50,
+      "Speed": 102
+    },
+    "sprite": "./images/png/886Drakloak.png"
+  },
+  {
+    "id": 887,
+    "name": {
+      "english": "Dragapult",
+      "japanese": "ドラパルト",
+      "chinese": ""
+    },
+    "type": ["Dragon", "Ghost"],
+    "base": {
+      "HP": 88,
+      "Attack": 120,
+      "Defense": 75,
+      "spAtk": 100,
+      "spDef": 75,
+      "Speed": 142
+    },
+    "sprite": "./images/png/887Dragapult.png"
+  },
+  {
+    "id": 888,
+    "name": {
+      "english": "Zacian",
+      "japanese": "ザシアン",
+      "chinese": ""
+    },
+    "type": ["Fairy", "Steel"],
+    "base": {
+      "HP": 92,
+      "Attack": 170,
+      "Defense": 115,
+      "spAtk": 80,
+      "spDef": 115,
+      "Speed": 148
+    },
+    "sprite": "./images/png/888Zacian.png"
+  },
+  {
+    "id": 889,
+    "name": {
+      "english": "Zamazenta",
+      "japanese": "ザマゼンタ",
+      "chinese": ""
+    },
+    "type": ["Fighting", "Steel"],
+    "base": {
+      "HP": 92,
+      "Attack": 130,
+      "Defense": 145,
+      "spAtk": 80,
+      "spDef": 145,
+      "Speed": 128
+    },
+    "sprite": "./images/png/889Zamazenta.png"
+  },
+  {
+    "id": 890,
+    "name": {
+      "english": "Eternatus",
+      "japanese": "ムゲンダイナ",
+      "chinese": ""
+    },
+    "type": ["Poison", "Dragon"],
+    "base": {
+      "HP": 140,
+      "Attack": 85,
+      "Defense": 95,
+      "spAtk": 145,
+      "spDef": 95,
+      "Speed": 130
+    },
+    "sprite": "./images/png/890Eternatus.png"
+  }
+]

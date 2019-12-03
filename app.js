@@ -1,9 +1,10 @@
+require("dotenv").config();
 const express = require("express");
 const app = express();
-let pkmn = require("./resources/json/completePokeInfo.json");
-const bodyParser = require("body-parser");
 const path = require("path");
 const fs = require("fs");
+const client = require("./config/db");
+const pokeFetch = require("./config/pokeFetch");
 const AdvancedSearch = require("./config/advancedSearch");
 
 // fs.exists("./resources/json/pokeimage.json", exists => {
@@ -82,12 +83,9 @@ const AdvancedSearch = require("./config/advancedSearch");
 //   console.log("successfully created complete pokedex!");
 // })
 
-// console.log(newpkmn[0]);
-
 const PORT = process.env.PORT || 3000;
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(express.json());
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
@@ -95,30 +93,18 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, "resources")));
 
 app.get("/", (req, res) => {
-  const { search, region, type } = req.query;
-  let filter = pkmn;
-  if (region || type) {
-    filter = AdvancedSearch(region, type);
-  }
-  // filter = AdvancedSearch(region, type);
-  const pat = new RegExp(search, "gi");
-
-  if (search) {
-    const filteredpkmn = filter.filter(pokemon => {
-      return (
-        pokemon.name.english.match(pat) || JSON.stringify(pokemon.id).match(pat)
-      );
-    });
-    res.render("index", {
-      pokemon: filteredpkmn,
-      search
-    });
-    return;
-  }
-  res.render("index", {
-    pokemon: filter,
-    search
-  });
+  pokeFetch()
+    .then(pkmn => {
+      console.log(pkmn);
+      const { search, region, type } = req.query;
+      AdvancedSearch(region, type, search).then(result => {
+        res.render("index", {
+          pokemon: result,
+          search
+        });
+      });
+    })
+    .catch(err => console.log(err));
 });
 
 app.listen(PORT, err => {

@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="unofficial pokedex,pokedex,pokemon,#pokemon,#pokedex,sword and shield">
+    <meta name="description" content="Web Pokedex, Browse your favourite pokemon!">
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link href="./css/bootstrap.min.css" rel="stylesheet" />
     <link rel="shortcut icon" href="./images/assets/pokeicon.png" type="image/x-icon">
@@ -76,6 +78,7 @@
                 <option value="Unova">Unova</option>
                 <option value="Kalos">Kalos</option>
                 <option value="Alola">Alola</option>
+                <option value="Galar">Galar</option>
               </select>
             </span>
           </span>
@@ -101,7 +104,7 @@
               Type
             </th>
             <th>
-              Stats
+              Base Stats
             </th>
           </tr>
         </thead>
@@ -111,8 +114,19 @@
             <td>
               <%= element.id %>
             </td>
-            <td>
-              <img src="<%= element.sprite %>" width="150" height="150" />
+            <td style="position: relative;">
+              <img src="./images/placeholder/poke.png" 
+              style="
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%,-50%);
+              opacity: 0.4;
+              height: 200px;
+              width: 200px;
+              z-index: -2;
+              ">
+              <img src="<%= element.sprite %>" onerror="this.src='./images/placeholder/poke.png';this.style='opacity:0.1;height:200px;width:200px;'" width="180" height="180" />
             </td>
             <td>
               <%= element.name.english %>
