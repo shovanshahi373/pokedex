@@ -10,7 +10,7 @@ if (process.env.NODE_ENV == "production") {
 }
 client = new mongoClient(string, {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  // useUnifiedTopology: true
 });
 
 client.connect((err, client) => {
