@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>#<%= pokemon.id %> - <%= pokemon.name.english %> - Pokedexit</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <style>
+      html,
+      body {
+        min-height: 100vh;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css"
+    />
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"
+    ></script>
+    <link
+      rel="shortcut icon"
+      href="./images/assets/pokeicon.png"
+      type="image/x-icon"
+    />
+    <link href="./css/index.css" rel="stylesheet" />
+    <script defer src="./js/loader.js"></script>
+    <script
+      src="https://kit.fontawesome.com/28dabda529.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body style="background-color: gray;">
+    <!-- loader -->
+    <section class="poke upper">
+      <div class="pokeball"></div>
+    </section>
+    <section class="poke lower"></section>
+
+    <div class="container p-5 min-vh-100" style="background-color: white;">
+      <div class="row">
+        <div class="col">
+          <h1 class="text-center"><%= pokemon.name.english %></h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 col-lg-4">
+          <img
+            src="<%= pokemon.sprite %>"
+            alt="<%= pokemon.name.english %>"
+            height="300"
+            width="300"
+          />
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <table class="table">
+            <tr>
+              <th colspan="2"><h1>Pokemon Info</h1></th>
+            </tr>
+            <tr>
+              <td>
+                National No.
+              </td>
+              <td>
+                <% if(pokemon.id < 10) { %> <% pokemon.id = "00" + pokemon.id %>
+                <% } %> <% if(pokemon.id > 10 && pokemon.id < 100) { %> <%
+                pokemon.id = "0" + pokemon.id %> <% } %> <%= pokemon.id %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Type
+              </td>
+              <td class="d-flex justify-content-center align-items-center">
+                <% pokemon.type.forEach(type => { %>
+                <div
+                  class="p-1 rounded mx-1 text-center bold bg-<%= type %>"
+                  style="width: 70px;"
+                >
+                  <%= type %>
+                </div>
+                <% }) %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Base exp.
+              </td>
+              <td>
+                <%= exp %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Height
+              </td>
+              <td>
+                <%= height %>m
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Weight
+              </td>
+              <td>
+                <%= weight %>kg
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Abilities
+              </td>
+              <td>
+                <% abilities.forEach(ability => { %>
+                <div><%= ability.ability.name %></div>
+                <% }) %>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="col-sm-12 col-lg-4">
+          <canvas height="200" width="200"></canvas>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <% if(prevPokemon) { %>
+          <a class="text-left" href="/<%= prevPokemon.id %>"
+            ><i class="fas fa-arrow-left"></i> #<%= prevPokemon.id %>-<%=
+            prevPokemon.name.english %></a
+          >
+          <%} %>
+        </div>
+        <div class="col d-flex justify-content-end">
+          <% if(nextPokemon) { %>
+          <a class="text-right" href="/<%= nextPokemon.id %>"
+            >#<%= nextPokemon.id %>-<%= nextPokemon.name.english %>
+            <i class="fas fa-arrow-right"></i
+          ></a>
+          <% } %>
+        </div>
+      </div>
+      <hr />
+      <section>
+        <h1>sprites</h1>
+        <table class="table table-bordered mw-50">
+          <tr>
+            <% if(sprites.back_default !== null) { %>
+            <td>
+              <small>back</small>
+              <img src="<%= sprites.back_default %>" alt="" />
+            </td>
+            <% } %> <% if(sprites.back_female !== null) { %>
+            <td>
+              <small>back-female</small>
+              <img src="<%= sprites.back_female %>" alt="" />
+            </td>
+            <% } %> <% if(sprites.back_shiny) { %>
+            <td>
+              <small>back-shiny</small>
+              <img src="<%= sprites.back_shiny %>" alt="" />
+            </td>
+            <% } %> <% if(sprites.back_shiny_female !== null) { %>
+            <td>
+              <small>back-shiny-female</small>
+              <img src="<%= sprites.back_shiny_female %>" alt="" />
+            </td>
+            <% } %>
+          </tr>
+          <tr>
+            <% if(sprites.front_default) { %>
+            <td>
+              <small>front</small>
+              <img src="<%= sprites.front_default %>" alt="" />
+            </td>
+            <% } %> <% if(sprites.front_female !== null) { %>
+            <td>
+              <small>front-female</small>
+              <img src="<%= sprites.front_female %>" alt="" />
+            </td>
+            <% } %> <% if(sprites.front_shiny) { %>
+            <td>
+              <small>front-shiny</small>
+              <img src="<%= sprites.front_shiny %>" alt="" />
+            </td>
+            <% } %> <% if(sprites.front_shiny_female !== null) { %>
+            <td>
+              <small>front-shiny-female</small>
+              <img src="<%= sprites.front_shiny_female %>" alt="" />
+            </td>
+            <% } %>
+          </tr>
+        </table>
+      </section>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        options = {
+          scale: {
+            angleLines: {
+              display: false
+            },
+            pointLabels: {
+              fontSize: 16
+            },
+            ticks: {
+              beginAtZero: true,
+              min: 0,
+              max: 250
+            }
+          },
+          legend: {
+            display: false
+          }
+        };
+        let HP = "<%= pokemon.base.HP %>";
+        let Attack = "<%= pokemon.base.Attack %>";
+        let Defense = "<%= pokemon.base.Defense %>";
+        let spAtk = "<%= pokemon.base.spAtk %>";
+        let spDef = "<%= pokemon.base.spDef %>";
+        let Speed = "<%= pokemon.base.Speed %>";
+        let stats = [
+          parseInt(HP),
+          parseInt(Attack),
+          parseInt(Defense),
+          parseInt(spAtk),
+          parseInt(spDef),
+          parseInt(Speed)
+        ];
+        data = {
+          labels: ["HP", "Attack", "Defense", "Sp. Atk", "Sp. Def", "Speed"],
+          datasets: [
+            {
+              label: null,
+              data: [HP, Attack, Defense, spAtk, spDef, Speed],
+              radius: 1,
+              pointRadius: 2
+            }
+          ]
+        };
+        console.log(stats);
+        const canvas = document.querySelector("canvas");
+        // canvas.height = 100;
+        // canvas.width = 100;
+        const ctx = canvas.getContext("2d");
+        var myRadarChart = new Chart(ctx, {
+          type: "radar",
+          data: data,
+          options: options
+        });
+      });
+    </script>
+  </body>
+</html>

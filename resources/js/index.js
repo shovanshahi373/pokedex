@@ -1,21 +1,11 @@
-document.addEventListener("DOMContentLoaded", launch);
+document.addEventListener("DOMContentLoaded", indexFunc);
 let pokemon = document.querySelector(".pokemon");
-let upper = document.querySelector(".poke.upper");
-let lower = document.querySelector(".poke.lower");
 let image = document.querySelector(".image");
 let search = document.querySelector(".pop-the-search");
 let restrict = document.querySelector(".restrict");
 
-function launch() {
+function indexFunc() {
   pokemon.style.cssText = 'display:"block";opacity:1';
-  upper.style.transform = "translateY(-" + 60 + "vh)";
-  lower.style.transform = "translateY(" + 60 + "vh)";
-  setTimeout(() => {
-    upper.style.opacity = 0;
-    upper.style.display = "none";
-    lower.style.opacity = 0;
-    lower.style.display = "none";
-  }, 3000);
 }
 
 search.addEventListener("mouseenter", function(e) {

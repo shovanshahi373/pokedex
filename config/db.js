@@ -9,7 +9,8 @@ if (process.env.NODE_ENV == "production") {
   string = `mongodb+srv://${name}:${pass}@cluster0-vpwzk.mongodb.net/test?retryWrites=true&w=majority`;
 }
 client = new mongoClient(string, {
-  useNewUrlParser: true
+  useNewUrlParser: true,
+  useUnifiedTopology: true
 });
 
 client.connect((err, client) => {
