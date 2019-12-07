@@ -61,6 +61,62 @@ body {
 .bg-Fighting {
   background-color: #bb5544;
 }
+.text-Water {
+  color: dodgerblue;
+}
+.text-Fire {
+  color: #ff4422;
+}
+.text-Grass {
+  color: #77cc55;
+}
+.text-Poison {
+  color: #aa5599;
+}
+.text-Flying {
+  color: #8899ff;
+}
+.text-Rock {
+  color: peru;
+}
+.text-Steel {
+  color: grey;
+}
+.text-Electric {
+  color: gold;
+}
+.text-Ghost {
+  /* color: aliceblue; */
+  color: darkslategray;
+}
+.text-Fairy {
+  color: #ee99ee;
+}
+.text-Bug {
+  color: olive;
+}
+.text-Ground {
+  color: #ddbb55;
+}
+.text-Normal {
+  color: #aaaa99;
+}
+.text-Dragon {
+  color: #5f52bf;
+}
+.text-Dark {
+  /* color: wheat; */
+  color: #775544;
+}
+.text-Ice {
+  color: #66ccff;
+}
+.text-Psychic {
+  color: #ff5599;
+}
+.text-Fighting {
+  color: #bb5544;
+}
 .bold {
   color: #fff;
   text-transform: uppercase;

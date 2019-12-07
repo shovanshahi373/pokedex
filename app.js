@@ -51,8 +51,35 @@ app.get("/", (req, res) => {
     .catch(err => console.log(err));
 });
 
+const getMovesArr = moves => {
+  return new Promise((resolve, reject) => {
+    const marr = moves.map(move => {
+      if (move.version_group_details[0].level_learned_at !== 0) {
+        return {
+          name: move.move.name,
+          lvl: move.version_group_details[0].level_learned_at
+        };
+      }
+    });
+    if (marr) {
+      resolve(marr);
+    } else {
+      reject({ msg: "something went wrong..." });
+    }
+  });
+};
+
 app.get("/:id", async (req, res) => {
   let { id } = req.params;
+  try {
+    if (parseInt(id) > 807) {
+      throw new Error("page no exist,boi");
+    }
+  } catch (err) {
+    console.log(err);
+    return res.status(404).send("page doesn't exist...yet");
+  }
+
   const result = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}/`);
   const details = await result.data;
 
@@ -62,63 +89,91 @@ app.get("/:id", async (req, res) => {
     height,
     weight,
     abilities,
-    base_experience
+    base_experience,
+    moves
   } = details;
-  // const newsprites = await [...sprites];
   console.log("-------------------------");
-  // console.log(newsprites);
-  let pid = parseInt(id);
-  client
-    .db("pokemon")
-    .collection("pokeinfo")
-    .find({ $or: [{ id: pid }, { id: pid + 1 }, { id: pid - 1 }] })
-    .toArray()
-    .then(result => {
-      if (result.length && result.length === 3) {
-        res.status(200).render("pokeInfo", {
-          pokemon: result[1],
-          species,
-          sprites,
-          height: height / 10,
-          weight: weight / 10,
-          abilities,
-          prevPokemon: result[0],
-          nextPokemon: result[2],
-          exp: base_experience
-        });
-      } else if (result.length && result.length === 2 && result[0].id === 1) {
-        res.status(200).render("pokeInfo", {
-          pokemon: result[0],
-          species,
-          sprites,
-          height: height / 10,
-          weight: weight / 10,
-          abilities,
-          prevPokemon: null,
-          nextPokemon: result[1],
-          exp: base_experience
-        });
-      } else if (result.length && result.length === 2 && result[0].id === 890) {
-        res.status(200).render("pokeInfo", {
-          pokemon: result[0],
-          species,
-          sprites,
-          height: height / 10,
-          weight: weight / 10,
-          abilities,
-          prevPokemon: result[1],
-          nextPokemon: null,
-          exp: base_experience
-        });
-      } else {
-        res
-          .status(404)
-          .send(
-            "<h1>The page you are trying to access doesn't seem to exist or is currently unavailable...</h1>"
-          );
-      }
+
+  let resArr;
+  let speciesData = await axios.get(species.url);
+  let spData = await speciesData.data;
+  // console.log(spData);
+
+  getMovesArr(moves)
+    .then(async result => {
+      const ress = await result.sort((item1, item2) =>
+        item1.lvl > item2.lvl ? 1 : -1
+      );
+      resArr = ress.filter(elem => elem !== undefined);
+
+      let pid = parseInt(id);
+      client
+        .db("pokemon")
+        .collection("pokeinfo")
+        .find({ $or: [{ id: pid }, { id: pid + 1 }, { id: pid - 1 }] })
+        .toArray()
+        .then(result => {
+          if (result.length && result.length === 3) {
+            res.status(200).render("pokeInfo", {
+              pokemon: result[1],
+              species,
+              sprites,
+              height: height / 10,
+              weight: weight / 10,
+              abilities,
+              prevPokemon: result[0],
+              nextPokemon: result[2],
+              exp: base_experience,
+              moves: resArr,
+              spData
+            });
+          } else if (
+            result.length &&
+            result.length === 2 &&
+            result[0].id === 1
+          ) {
+            res.status(200).render("pokeInfo", {
+              pokemon: result[0],
+              species,
+              sprites,
+              height: height / 10,
+              weight: weight / 10,
+              abilities,
+              prevPokemon: null,
+              nextPokemon: result[1],
+              exp: base_experience,
+              moves: resArr,
+              spData
+            });
+          } else if (
+            result.length &&
+            result.length === 2 &&
+            result[0].id === 890
+          ) {
+            res.status(200).render("pokeInfo", {
+              pokemon: result[0],
+              species,
+              sprites,
+              height: height / 10,
+              weight: weight / 10,
+              abilities,
+              prevPokemon: result[1],
+              nextPokemon: null,
+              exp: base_experience,
+              moves: resArr,
+              spData
+            });
+          } else {
+            res
+              .status(404)
+              .send(
+                "<h1>The page you are trying to access doesn't seem to exist or is currently unavailable...</h1>"
+              );
+          }
+        })
+        .catch(err => res.status(500).json(err));
     })
-    .catch(err => res.status(500).json(err));
+    .catch(err => console.log(err));
 });
 
 app.get("*", (req, res) => {

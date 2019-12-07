@@ -48,8 +48,22 @@
           <h1 class="text-center"><%= pokemon.name.english %></h1>
         </div>
       </div>
+      <div class="row mb-5">
+        <p>
+          <%= pokemon.name.english %> is a <% if(pokemon.type.length === 1) { %>
+          <span class="text-<%= pokemon.type[0] %>"
+            ><%= pokemon.type[0] %></span
+          >
+          <% }else { %>
+          <span class="text-<%= pokemon.type[0] %>"><%= pokemon.type[0] %></span
+          >/<span class="text-<%= pokemon.type[1] %>"
+            ><%= pokemon.type[1] %></span
+          >
+          <% } %> -type Pokémon introduced in <%= spData.generation.name %>.
+        </p>
+      </div>
       <div class="row">
-        <div class="col-sm-6 col-lg-4">
+        <div class="col-sm-12 col-lg-4 text-center">
           <img
             src="<%= pokemon.sprite %>"
             alt="<%= pokemon.name.english %>"
@@ -57,10 +71,10 @@
             width="300"
           />
         </div>
-        <div class="col-sm-6 col-lg-4">
+        <div class="col-sm-12 col-lg-4">
           <table class="table">
             <tr>
-              <th colspan="2"><h1>Pokemon Info</h1></th>
+              <th colspan="2"><h1>Pokémon Info</h1></th>
             </tr>
             <tr>
               <td>
@@ -89,10 +103,10 @@
             </tr>
             <tr>
               <td>
-                Base exp.
+                Species
               </td>
               <td>
-                <%= exp %>
+                <%= spData.genera[2].genus %>
               </td>
             </tr>
             <tr>
@@ -115,11 +129,73 @@
               <td>
                 Abilities
               </td>
-              <td>
+              <td style="text-align:start">
                 <% abilities.forEach(ability => { %>
-                <div><%= ability.ability.name %></div>
+                <div>
+                  <%= ability.ability.name %> <% if(ability.is_hidden === true)
+                  { %>
+                  <span style="color:#ccc">(hidden ability)</span>
+                  <% } %>
+                </div>
                 <% }) %>
               </td>
+            </tr>
+            <tr>
+              <% if(spData.pokedex_numbers.length !== 1 && spData.pokedex_numbers[0].pokedex.name !== 'national') { %>
+                <td class="text-center">
+                  Local No.
+                </td>
+                <td>
+                  <% spData.pokedex_numbers.forEach(entry => { %>
+                  <div>
+                    <% if(entry.pokedex.name === 'original-unova') { %>
+                    <%= entry.entry_number %>
+                    <span style="color:#ccc">(Black/White)</span>
+                    <% } %>
+                    <% if(entry.pokedex.name === 'updated-unova') { %>
+                    <%= entry.entry_number %>
+                    <span style="color:#ccc">(Black 2/White 2)</span>
+                    <% } %>
+                    <% if(entry.pokedex.name === 'kalos-central') { %>
+                    <%= entry.entry_number %>
+                    <span style="color:#ccc">(X/Y - Central Kalos)</span>
+                    <% } %>
+                    <% if(entry.pokedex.name === 'kalos-coastal') { %>
+                    <%= entry.entry_number %>
+                    <span style="color:#ccc">(X/Y - Coastal Kalos)</span>
+                    <% } %>
+                    <% if(entry.pokedex.name === 'kalos-mountain') { %>
+                    <%= entry.entry_number %>
+                    <span style="color:#ccc">(X/Y - Mountain Kalos)</span>
+                    <% } %>
+                    <% if(entry.pokedex.name === 'original-sinnoh') { %>
+                    <%= entry.entry_number %>
+                    <span style="color:#ccc">(Diamond/Pearl)</span>
+                    <% } %>
+                    <% if(entry.pokedex.name === 'extended-sinnoh') { %>
+                    <%= entry.entry_number %>
+                    <span style="color:#ccc">(Platinum)</span>
+                    <% } %>
+                    <% if(entry.pokedex.name === 'hoenn') { %>
+                    <%= entry.entry_number %>
+                    <span style="color:#ccc">(Ruby/Sapphire/Emerald)</span>
+                    <% } %>
+                    <% if(entry.pokedex.name === 'updated-hoenn') { %>
+                    <%= entry.entry_number %>
+                    <span style="color:#ccc">(Omega Ruby/Alpha Sapphire)</span>
+                    <% } %>
+                    <% if(entry.pokedex.name === 'original-johto') { %>
+                    <%= entry.entry_number %>
+                    <span style="color:#ccc">(Gold/Silver/Crystal)</span>
+                    <% } %>
+                    <% if(entry.pokedex.name === 'updated-johto') { %>
+                    <%= entry.entry_number %>
+                    <span style="color:#ccc">(HeartGold/SoulSilver)</span>
+                    <% } %>
+                  </div>
+                  <% }) %>
+                </td>
+              <% } %>
             </tr>
           </table>
         </div>
@@ -129,74 +205,189 @@
       </div>
       <div class="row">
         <div class="col">
-          <% if(prevPokemon) { %>
+          <% if(prevPokemon) { %> <% var prevPokemonLabel = prevPokemon.id %> <%
+          if(prevPokemon.id < 10) { %> <% prevPokemonLabel = "00" +
+          prevPokemon.id %> <% } %> <% if(prevPokemon.id >= 10 && prevPokemon.id
+          < 100) { %> <% prevPokemonLabel = "0" + prevPokemon.id %> <% } %>
+
           <a class="text-left" href="/<%= prevPokemon.id %>"
-            ><i class="fas fa-arrow-left"></i> #<%= prevPokemon.id %>-<%=
+            ><i class="fas fa-arrow-left"></i> #<%= prevPokemonLabel %>-<%=
             prevPokemon.name.english %></a
           >
-          <%} %>
+          <% } %>
         </div>
         <div class="col d-flex justify-content-end">
-          <% if(nextPokemon) { %>
+          <% if(nextPokemon) { %> <% var nextPokemonLabel = nextPokemon.id %> <%
+          if(nextPokemon.id < 10) { %> <% nextPokemonLabel = "00" +
+          nextPokemon.id %> <% } %> <% if(nextPokemon.id >= 10 && nextPokemon.id
+          < 100) { %> <% nextPokemonLabel = "0" + nextPokemon.id %> <% } %>
           <a class="text-right" href="/<%= nextPokemon.id %>"
-            >#<%= nextPokemon.id %>-<%= nextPokemon.name.english %>
+            >#<%= nextPokemonLabel %>-<%= nextPokemon.name.english %>
             <i class="fas fa-arrow-right"></i
           ></a>
           <% } %>
         </div>
       </div>
       <hr />
+      <div class="row">
+        <div class="col">
+          <h1>Training</h1>
+          <table class="table">
+            <tr>
+              <td>
+                Growth rate
+              </td>
+              <td>
+                <%= spData.growth_rate.name %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Base exp.
+              </td>
+              <td>
+                <%= exp %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Base Happiness
+              </td>
+              <td>
+                <%= spData.base_happiness %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Catch rate
+              </td>
+              <td>
+                <%= spData.capture_rate %>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="col">
+          <h1>Breeding</h1>
+          <table class="table">
+            <tr>
+              <td>
+                Gender
+              </td>
+              <td>
+                <% if(spData.gender_rate === 4) { %>
+                  <span style="color:dodgerblue">50% male</span>,<span style="color:#ee99ee"> 50% female</span>
+                <% } %>
+                <% if(spData.gender_rate === 1) { %>
+                  <span style="color:dodgerblue;">87.5% male</span>,<span style="color:#ee99ee"> 12.5% female</span>
+                <% } %>
+                <% if(spData.gender_rate === -1) { %>
+                  <span>Genderless</span>
+                <% } %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Egg Cycles
+              </td>
+              <td>
+                <%= spData.hatch_counter %>
+                <span style="color:#ccc">(<%= spData.hatch_counter * 255 %>-<%= spData.hatch_counter * 257 %> steps)</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Egg Groups
+              </td>
+              <td>
+                <% spData.egg_groups.forEach(group => { %>
+                  <% if(group.name === 'no-eggs') { %>
+                    <span>undiscovered</span>
+                  <% }else { %>
+                    <% if(spData.egg_groups.indexOf(group) === spData.egg_groups.length - 1) { %>
+                      <span><%= group.name %></span>
+                    <% }else { %>
+                      <span><%= group.name %>,</span>
+                    <% } %>
+                  <% } %>
+                <% }) %>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
       <section>
-        <h1>sprites</h1>
-        <table class="table table-bordered mw-50">
-          <tr>
-            <% if(sprites.back_default !== null) { %>
-            <td>
-              <small>back</small>
-              <img src="<%= sprites.back_default %>" alt="" />
-            </td>
-            <% } %> <% if(sprites.back_female !== null) { %>
-            <td>
-              <small>back-female</small>
-              <img src="<%= sprites.back_female %>" alt="" />
-            </td>
-            <% } %> <% if(sprites.back_shiny) { %>
-            <td>
-              <small>back-shiny</small>
-              <img src="<%= sprites.back_shiny %>" alt="" />
-            </td>
-            <% } %> <% if(sprites.back_shiny_female !== null) { %>
-            <td>
-              <small>back-shiny-female</small>
-              <img src="<%= sprites.back_shiny_female %>" alt="" />
-            </td>
-            <% } %>
-          </tr>
-          <tr>
-            <% if(sprites.front_default) { %>
-            <td>
-              <small>front</small>
-              <img src="<%= sprites.front_default %>" alt="" />
-            </td>
-            <% } %> <% if(sprites.front_female !== null) { %>
-            <td>
-              <small>front-female</small>
-              <img src="<%= sprites.front_female %>" alt="" />
-            </td>
-            <% } %> <% if(sprites.front_shiny) { %>
-            <td>
-              <small>front-shiny</small>
-              <img src="<%= sprites.front_shiny %>" alt="" />
-            </td>
-            <% } %> <% if(sprites.front_shiny_female !== null) { %>
-            <td>
-              <small>front-shiny-female</small>
-              <img src="<%= sprites.front_shiny_female %>" alt="" />
-            </td>
-            <% } %>
-          </tr>
-        </table>
+        <% if([...new Set(Object.values(sprites))].length !== 1) { %>
+        <h1>Sprites</h1>
+        <div class="row">
+          <% Object.keys(sprites).forEach(key => { %> <% if(sprites[key]) { %>
+          <div
+            class="col text-center"
+            style="border:1px solid #ccc;margin:0 1px 1px 0"
+          >
+            <p><%= key %></p>
+            <img src="<%= sprites[key] %>" />
+          </div>
+          <% } %> <% }) %>
+        </div>
+        <% } %>
       </section>
+      <hr />
+      <h1>Moves</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>
+              Egg Moves
+            </th>
+            <th>
+              level
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <% moves.forEach(move => { %>
+          <tr>
+            <td>
+              <%= move.name %>
+            </td>
+            <td>
+              <%= move.lvl %>
+            </td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+      <hr />
+      <h1>Pokedex Entries</h1>
+      <table class="table table-striped">
+        <% spData.flavor_text_entries.forEach(flavorText => { %> <%
+        if(flavorText.language.name === 'en') { %>
+        <tr>
+          <td>
+            Pokemon
+            <span style="text-transform:capitalize"
+              ><%= flavorText.version.name %></span
+            >
+          </td>
+          <td>
+            <i><%= flavorText.flavor_text %></i>
+          </td>
+        </tr>
+        <% } %> <% }) %>
+      </table>
+      <hr>
+      <div class="row">
+        <div class="col">
+          <a class="text-right" href="/<%= prevPokemon.id %>">
+            <i class="fas fa-arrow-left"></i> #<%= prevPokemonLabel %>-<%= prevPokemon.name.english %>
+          </a>
+        </div>
+        <div class="col d-flex justify-content-end">
+          <a class="text-right" href="/<%= nextPokemon.id %>">#<%= nextPokemonLabel %>-<%= nextPokemon.name.english %>
+            <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
     </div>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
