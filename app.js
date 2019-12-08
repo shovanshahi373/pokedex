@@ -72,12 +72,12 @@ const getMovesArr = moves => {
 app.get("/:id", async (req, res) => {
   let { id } = req.params;
   try {
-    if (parseInt(id) > 807) {
+    if (parseInt(id) > 807 || isNaN(parseInt(id))) {
       throw new Error("page no exist,boi");
     }
   } catch (err) {
     console.log(err);
-    return res.status(404).send("page doesn't exist...yet");
+    return res.sendFile("error.html", { root: "./resources" });
   }
 
   const result = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}/`);
@@ -164,11 +164,7 @@ app.get("/:id", async (req, res) => {
               spData
             });
           } else {
-            res
-              .status(404)
-              .send(
-                "<h1>The page you are trying to access doesn't seem to exist or is currently unavailable...</h1>"
-              );
+            res.sendFile("error.html", { root: "./resources" });
           }
         })
         .catch(err => res.status(500).json(err));
@@ -177,7 +173,7 @@ app.get("/:id", async (req, res) => {
 });
 
 app.get("*", (req, res) => {
-  res.status(404).send("bad request!!");
+  res.sendFile("error.html", { root: "./resources" });
 });
 
 app.listen(PORT, err => {

@@ -128,7 +128,7 @@
               width: 200px;
               z-index: -2;
               ">
-              <img src="<%= element.sprite %>" onerror="this.src='./images/placeholder/poke.png';this.style='opacity:0.1;height:200px;width:200px;'" width="180" height="180" />
+              <img data-src="<%= element.sprite %>" width="180" height="180" />
             </td>
             <td>
               <a href="/<%= element.id %>">
@@ -212,5 +212,30 @@
         </tbody>
       </table>
     </div>
+    <script>
+      const preloadImage = (img) => {
+        const src = img.getAttribute("data-src");
+        if (!img) {
+          return;
+        }
+        img.src = src;
+      }
+      document.addEventListener("DOMContentLoaded",()=> {
+        const images = document.querySelectorAll('[data-src]');
+        const ImageObserver = new IntersectionObserver((entries, imgObserver) => {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+              return
+            } else {
+              preloadImage(entry.target);
+              imgObserver.unobserve(entry.target);
+            }
+          })
+        });
+        images.forEach(image => {
+          ImageObserver.observe(image);
+        })
+      })
+    </script>
   </body>
 </html>

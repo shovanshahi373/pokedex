@@ -141,7 +141,7 @@
               </td>
             </tr>
             <tr>
-              <% if(spData.pokedex_numbers.length !== 1 && spData.pokedex_numbers[0].pokedex.name !== 'national') { %>
+              <% if(spData.pokedex_numbers.length && spData.pokedex_numbers.length !== 1 && spData.pokedex_numbers[0].pokedex.name !== 'national') { %>
                 <td class="text-center">
                   Local No.
                 </td>
@@ -283,6 +283,15 @@
                 <% } %>
                 <% if(spData.gender_rate === -1) { %>
                   <span>Genderless</span>
+                <% } %>
+                <% if(spData.gender_rate === 6) { %>
+                  <span style="color:dodgerblue;">25% male</span>,<span style="color:#ee99ee"> 75% female</span>
+                <% } %>
+                <% if(spData.gender_rate === 8) { %>
+                  <span style="color:dodgerblue;">0% male</span>,<span style="color:#ee99ee"> 100% female</span>
+                <% } %>
+                <% if(spData.gender_rate === 0) { %>
+                  <span style="color:dodgerblue;">100% male</span>,<span style="color:#ee99ee"> 0% female</span>
                 <% } %>
               </td>
             </tr>
