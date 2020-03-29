@@ -8,6 +8,7 @@ const axios = require("axios");
 // const pokedex = client.db("pokedex").collection("pokeinfo");
 // const pokeFetch = require("./config/pokeFetch");
 // const AdvancedSearch = require("./config/advancedSearch");
+const allpokemon = require("./resources/json/completePokeInfo.json");
 const {
   getAllPkmn,
   getPkmnByType,
@@ -69,6 +70,18 @@ const getMovesArr = moves => {
   });
 };
 
+app.get("/insertpokemon", (req, res) => {
+  client
+    .db("pokemon")
+    .collection("pokeinfo")
+    .insertMany([...allpokemon])
+    .then(result => {
+      console.log("successfully inserted pkmns....");
+      return res.status(201).send("ok!");
+    })
+    .catch(err => console.log(err));
+});
+
 app.get("/:id", async (req, res) => {
   let { id } = req.params;
   try {
@@ -98,6 +111,45 @@ app.get("/:id", async (req, res) => {
   let speciesData = await axios.get(species.url);
   let spData = await speciesData.data;
   // console.log(spData);
+  let evoChainData = await axios.get(spData.evolution_chain.url);
+  let evoChain = await evoChainData.data;
+  let stage1Data, stage2Data, stage3Data;
+  stage1Data = await axios.get(
+    `https://pokeapi.co/api/v2/pokemon/${evoChain.chain.species.name}/`
+  );
+  stage1 = await stage1Data.data;
+  const evolutions = {};
+
+  if (evoChain.chain.evolves_to.length) {
+    evolutions.basic = {};
+    evolutions.basic.name = stage1.name;
+    evolutions.basic.image = stage1.sprites.front_default;
+    evolutions.basic.evodetails = {
+      ...evoChain.chain.evolves_to[0].evolution_details[0]
+    };
+    stage2Data = await axios.get(
+      `https://pokeapi.co/api/v2/pokemon/${evoChain.chain.evolves_to[0].species.name}/`
+    );
+    stage2 = await stage2Data.data;
+    evolutions.secondevo = {};
+    evolutions.secondevo.name = stage2.name;
+    evolutions.secondevo.image = stage2.sprites.front_default;
+    if (evoChain.chain.evolves_to[0].evolves_to.length) {
+      evolutions.secondevo.evodetails = {
+        ...evoChain.chain.evolves_to[0].evolves_to[0].evolution_details[0]
+      };
+      stage3Data = await axios.get(
+        `https://pokeapi.co/api/v2/pokemon/${evoChain.chain.evolves_to[0].evolves_to[0].species.name}/`
+      );
+      stage3 = await stage3Data.data;
+      evolutions.finalevo = {};
+      evolutions.finalevo.name = stage3.name;
+      evolutions.finalevo.image = stage3.sprites.front_default;
+    }
+  }
+
+  console.log(evolutions);
+  // console.log(spData);
 
   getMovesArr(moves)
     .then(async result => {
@@ -125,7 +177,8 @@ app.get("/:id", async (req, res) => {
               nextPokemon: result[2],
               exp: base_experience,
               moves: resArr,
-              spData
+              spData,
+              evolutions
             });
           } else if (
             result.length &&
@@ -143,7 +196,8 @@ app.get("/:id", async (req, res) => {
               nextPokemon: result[1],
               exp: base_experience,
               moves: resArr,
-              spData
+              spData,
+              evolutions
             });
           } else if (
             result.length &&
@@ -161,7 +215,8 @@ app.get("/:id", async (req, res) => {
               nextPokemon: null,
               exp: base_experience,
               moves: resArr,
-              spData
+              spData,
+              evolutions
             });
           } else {
             res.sendFile("error.html", { root: "./resources" });

@@ -1,0 +1,23 @@
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDlKXeVGf-g20YaUxr7huj-erfp2U_PspM",
+    authDomain: "pokedex-5d94a.firebaseapp.com",
+    databaseURL: "https://pokedex-5d94a.firebaseio.com",
+    projectId: "pokedex-5d94a",
+    storageBucket: "pokedex-5d94a.appspot.com",
+    messagingSenderId: "149810490358",
+    appId: "1:149810490358:web:fb262c45e5df8cb40cf5d7",
+    measurementId: "G-DHYGX9NFCX"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
